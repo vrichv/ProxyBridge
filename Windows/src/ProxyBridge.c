@@ -417,8 +417,8 @@ static DWORD WINAPI packet_processor(LPVOID arg)
                                     snprintf(proxy_info, sizeof(proxy_info), "Blocked (UDP)");
                                 }
 
-                                const char* display_name = extract_filename(process_name);
-                                g_connection_callback(display_name, pid, dest_ip_str, dest_port, proxy_info);
+                                // const char* display_name = extract_filename(process_name);
+                                g_connection_callback(process_name, pid, dest_ip_str, dest_port, proxy_info);
 
                                 if (g_traffic_logging_enabled)
                                 {
@@ -587,8 +587,8 @@ static DWORD WINAPI packet_processor(LPVOID arg)
                                 snprintf(proxy_info, sizeof(proxy_info), "Blocked");
                             }
 
-                            const char* display_name = extract_filename(process_name);
-                            g_connection_callback(display_name, pid, dest_ip_str, orig_dest_port, proxy_info);
+                            // const char* display_name = extract_filename(process_name);
+                            g_connection_callback(process_name, pid, dest_ip_str, orig_dest_port, proxy_info);
 
                             if (g_traffic_logging_enabled)
                             {
